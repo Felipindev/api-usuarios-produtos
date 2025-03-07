@@ -1,4 +1,4 @@
-import BD from './db.js'
+import {BD} from '../../db.js'
 
 class Usuario {
     //função estática para novo usuario
@@ -11,3 +11,5 @@ class Usuario {
             return resultado.rows[0];
     }
 }
+
+export default Usuario;
