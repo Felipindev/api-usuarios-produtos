@@ -16,7 +16,7 @@ class Movimentacao {
         LEFT JOIN prod_usuarios u ON pm.id_usuario = u.id_usuario
         order by pm. data_movimentacao DESC
         `)
-        return resultado.status(200).json(resultado.rows);
+        return resultado.rows;
     }
 
     static async atualizarTodosCampos(id, id_produto, id_usuario,tipo_movimentacao, quantidade, data_movimentacao){

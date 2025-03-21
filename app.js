@@ -16,6 +16,10 @@ app.use(cors()); //habilitar o cors
 //uso do middleware (body-parser) para converter os valores do corpo da requisição em JSON
 app.use(bodyParser.json());
 
+app.get('/', (req, res) => {
+    res.send("Bem vindo a API do sistema de estoque!");
+});
+
 //definir rota de usuario importadas no arquivo usuarioRoutes
 app.use(usuarioRoutes);
 app.use(produtosRoutes);
@@ -41,3 +45,5 @@ const PORT = 3000;
 app.listen(PORT,() =>{
     console.log(`Api rodando no http://localhost:${PORT}`);
 })
+
+export default app;

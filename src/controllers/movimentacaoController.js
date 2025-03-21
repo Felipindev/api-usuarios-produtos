@@ -75,7 +75,7 @@ class MovimentacaoController{
     static async consultaPorId(req,res){
         const {id} = req.params
         try {
-            const movimentacao = await BD.query(`SELECT * FROM prod_movimentacoes WHERE id_movimentacao = $1`,[id])
+            const movimentacao = await BD.query(`SELECT * FROM prod_movimentacoes WHERE id = $1`,[id])
             return res.status(200).json(movimentacao.rows[0])
         } catch (error) {
             console.error("Erro ao consultar movimentacao", error);
