@@ -10,6 +10,14 @@ class Usuario {
             `, [nome, email, senha])
             return resultado.rows[0];
     }
+
+    //função estática para listar todos os usuarios
+    static async listar(){
+        const resultado = await BD.query(`
+            SELECT * FROM prod_usuarios
+            `)
+            return resultado.rows; //retornar todos os usuarios
+        }
 }
 
 export default Usuario;

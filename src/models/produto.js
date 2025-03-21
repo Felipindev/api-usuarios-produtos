@@ -8,6 +8,12 @@ class Produto {
             `, [nome, preco, imagem, link_produto, categoria, frete_gratis])
             return resultado.rows[0];
     }
+    static async listar(){
+        const resultado = await BD.query(`
+            SELECT * FROM prod_produtos
+            `)
+            return resultado.rows; //retornar todos os produtos
+        }
 }
 
 export default Produto;
